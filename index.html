@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Markdown Studio</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <div id="title">Markdown Studio</div>
+  <div id="main">
+    <nav id="activity" aria-label="Barra de atividades">
+      <button class="ab on" id="btnSide" title="Explorador de arquivos" aria-label="Explorador de arquivos"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg></button>
+      <div class="sp"></div>
+      <button class="ab" id="btnTheme" title="Alternar tema claro/escuro" aria-label="Alternar tema"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+    </nav>
+    <aside id="side">
+      <div class="sh"><span>Explorador</span><button id="btnNew" title="Novo arquivo" aria-label="Novo arquivo">+</button></div>
+      <ul id="files"></ul>
+    </aside>
+    <section id="work">
+      <div id="tabs" role="tablist"></div>
+      <div id="bar">
+        <button data-a="h1" title="Título 1"><b>H1</b></button>
+        <button data-a="h2" title="Título 2"><b>H2</b></button>
+        <button data-a="h3" title="Título 3"><b>H3</b></button>
+        <span class="sep"></span>
+        <button data-a="bold" title="Negrito (Ctrl+B)"><b>N</b></button>
+        <button data-a="italic" title="Itálico (Ctrl+I)"><i>I</i></button>
+        <button data-a="strike" title="Tachado"><s>T</s></button>
+        <button data-a="code" title="Código em linha">&lt;/&gt;</button>
+        <span class="sep"></span>
+        <button data-a="ul" title="Lista">• Lista</button>
+        <button data-a="ol" title="Lista numerada">1. Lista</button>
+        <button data-a="task" title="Lista de tarefas">☑ Tarefas</button>
+        <button data-a="quote" title="Citação">❝</button>
+        <button data-a="link" title="Link (Ctrl+K)">Link</button>
+        <button data-a="block" title="Bloco de código">Bloco</button>
+        <button data-a="table" title="Tabela">Tabela</button>
+        <button data-a="hr" title="Linha horizontal">―</button>
+        <span class="grow"></span>
+        <button id="btnCopy" title="Copiar o Markdown">Copiar</button>
+        <button id="btnSync" title="Sincronizar rolagem" class="on-sync">Rolagem sincronizada</button>
+        <span class="sep"></span>
+        <div class="seg" role="group" aria-label="Modo de exibição">
+          <button data-v="edit">Editor</button>
+          <button data-v="split" class="on">Dividido</button>
+          <button data-v="preview">Resultado</button>
+        </div>
+      </div>
+      <div id="split" data-view="split">
+        <div id="ed">
+          <div id="gut" aria-hidden="true"></div>
+          <textarea id="ta" spellcheck="false" wrap="off" aria-label="Editor de Markdown" autocapitalize="off" autocomplete="off"></textarea>
+        </div>
+        <div id="div" role="separator" aria-orientation="vertical" title="Arraste para redimensionar"></div>
+        <div id="pv"><article class="md" id="out"></article></div>
+      </div>
+    </section>
+  </div>
+  <footer id="status">
+    <span id="stPos">Ln 1, Col 1</span>
+    <span id="stSave">Salvo</span>
+    <span class="r"><span id="stCount"></span><span>Markdown</span><span>UTF-8</span></span>
+  </footer>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
